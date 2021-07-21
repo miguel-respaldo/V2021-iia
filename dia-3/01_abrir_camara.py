@@ -7,15 +7,19 @@ if not camara.isOpened():
     print("No se puede abrir la camara")
     exit(1)
 
-# Leemos la imagen de la camara
-ret, imagen = camara.read()
+while True:
+    # Leemos la imagen de la camara
+    ret, imagen = camara.read()
 
-if not ret:
-    print("No podemos capturar la imagen de la camara")
-else:
+    if not ret:
+        print("No podemos capturar la imagen de la camara")
+        break
+
     cv.imshow("Camara", imagen)
 
-espera = input("Dar Enter")
+    # Si precionamos la tecla Escape
+    if cv.waitKey(1) == 27:
+        break
 
 camara.release()
 cv.destroyAllWindows()
