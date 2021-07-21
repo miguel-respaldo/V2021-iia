@@ -1,6 +1,6 @@
 import cv2 as cv
 
-camara = cv.VideoCapture(0)
+camara = cv.VideoCapture(2)
 
 # Si la camara NO esta abierta
 if not camara.isOpened():
@@ -31,9 +31,9 @@ while True:
 
     # Dibujar un rectangulo en cada cara
     for (x, y, w, h) in caras:
-            cv.rectangle(espejo, (x,y), (x+w,y+h), (255,0,0), 2)
+        cv.rectangle(espejo, (x,y), (x+w,y+h), (255,0,0), 2)
 
-    cv.imshow("Cámara", espejo)
+    cv.imshow("Camara", espejo)
 
     # Si precionamos la tecla Escape
     if cv.waitKey(1) == 27:
