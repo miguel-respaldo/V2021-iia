@@ -24,9 +24,9 @@ print("Comenzando entrenamiento...")
 historial = modelo.fit(celsius, fahrenheit, epochs=1000, verbose=False)
 print("Modelo entrenado!")
 
-plt.xlabel("# Epoca")
-plt.ylabel("Magnitud de pérdida")
-plt.plot(historial.history["loss"])
+#plt.xlabel("# Epoca")
+#plt.ylabel("Magnitud de pérdida")
+#plt.plot(historial.history["loss"])
 
 print("Hagamos una predicción!")
 resultado = modelo.predict([100.0])
